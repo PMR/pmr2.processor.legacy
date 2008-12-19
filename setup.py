@@ -24,7 +24,7 @@ setup(name='pmr2.processor.legacy',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          #'lxml>2.0.5',
+          'lxml>2.0.5',
       ],
       entry_points="""
       # -*- Entry points: -*-
