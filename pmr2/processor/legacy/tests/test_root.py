@@ -6,6 +6,8 @@ from cStringIO import StringIO
 from pmr2.processor.legacy import *
 from pmr2.processor.legacy import tmpdoc
 
+testroot = dirname(__file__)
+
 class RootTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -20,7 +22,7 @@ class RootTestCase(unittest.TestCase):
         self.assertEqual(result, '<bread>Hamburger</bread>')
 
     def test_tmpdoc(self):
-        f = open('input.cellml')
+        f = open(join(testroot, 'input.cellml'))
         result = tmpdoc.tmpdoc2html(f).getvalue()
         # just a simple test is good enough for now.
         self.assert_('<h4>Model Structure</h4>' in result)
