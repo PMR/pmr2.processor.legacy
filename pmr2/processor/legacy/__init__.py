@@ -8,7 +8,7 @@ xsltroot = os.path.join(os.path.dirname(__file__), 'xslt')
 
 from lxml import etree 
 
-__all__ = ['apply_xslt',]
+__all__ = ['apply_xslt', 'StringIO']
 
 def xslt_transform(input, xslt):
     """\
