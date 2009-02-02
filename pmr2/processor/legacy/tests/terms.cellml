@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:bqs="http://www.cellml.org/bqs/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:ns7="http://www.cellml.org/metadata/simulation/1.0#" cmeta:id="cellml_tmpdoc_xslt" name="cellml_tmpdoc_xslt">
+  
+<documentation xmlns="http://cellml.org/tmp-documentation">
+<article>
+  <articleinfo>
+  <title>Title of Article</title>
+  <author>
+    <firstname>Tommy</firstname>
+    <surname>Yu</surname>
+    <affiliation>
+      <shortaffil>Bioengineering Institute, University of Auckland</shortaffil>
+    </affiliation>
+  </author>
+</articleinfo>
+  <section id="sec_status">
+    <title>Model Status</title>
+    <para>
+      A paragraph describing the status of the model.
+    </para>
+  </section>
+  <sect1 id="sec_structure">
+<title>Model Structure</title>
+
+<para>
+A paragraph that describes the model structure. This block of text can potentially be long, and there may be a number of these.
+</para>
+
+<para>
+The complete original paper reference is cited below:
+</para>
+
+<para>
+Test Title, Yu, T. and Doe, J. <ulink url="http://www.example.org/">
+            <emphasis>Example Journal</emphasis>
+          </ulink>, 12, 345-369.  <ulink url="http://www.example.com/query.fcgi?dopt=Abstract&amp;id=12345369">ID: 12345369</ulink>
+</para>
+
+<informalfigure float="0" id="fig_cell_diagram">
+<mediaobject>
+  <imageobject>
+    <objectinfo>
+      <title>cell diagram of the example model showing ionic currents across the cell surface membrane</title>
+    </objectinfo>
+    <imagedata fileref="cell_diagram_model.png"/>
+  </imageobject>
+</mediaobject>
+<caption>A schematic diagram describing the current flows across the cell membrane that are captured in the example model.</caption>
+</informalfigure>
+
+<informalfigure float="0" id="fig_cellml_rendering">
+<mediaobject>
+  <imageobject>
+    <objectinfo>
+      <title>the cellml rendering of the example model</title>
+    </objectinfo>
+    <imagedata fileref="cellml_rendering.gif"/>
+  </imageobject>
+</mediaobject>
+<caption>Some descriptive text for diagram.</caption>
+</informalfigure>
+
+<para>
+The membrane physically contains the currents as indicated by the blue arrows in <xref linkend="fig_cellml_rendering"/>.
+</para>
+
+<para>
+Example <ulink url="${HTML_EXMPL_ALBRECHT_MODEL1}">Reference Model</ulink>
+</para>
+
+</sect1>
+</article>
+</documentation>
+   <units name="ms">
+      <unit units="second" prefix="milli"/>
+   </units>
+   <units name="per_ms">
+      <unit units="second" prefix="milli" exponent="-1"/>
+   </units>
+   <units name="mV">
+      <unit units="volt" prefix="milli"/>
+   </units>
+   <units name="per_mV">
+      <unit units="volt" prefix="milli" exponent="-1"/>
+   </units>
+   <units name="per_mV_ms">
+      <unit units="mV" exponent="-1"/>
+      <unit units="ms" exponent="-1"/>
+   </units>
+   <units name="mS_per_mm2">
+      <unit units="siemens" prefix="milli"/>
+      <unit units="metre" prefix="milli" exponent="-2"/>
+   </units>
+   <units name="uF_per_mm2">
+      <unit units="farad" prefix="micro"/>
+      <unit units="metre" prefix="milli" exponent="-2"/>
+   </units>
+   <units name="uA_per_mm2">
+      <unit units="ampere" prefix="micro"/>
+      <unit units="metre" prefix="milli" exponent="-2"/>
+   </units>
+   <units name="concentration_units">
+      <unit units="mole" prefix="nano"/>
+      <unit units="metre" prefix="milli" exponent="-3"/>
+   </units>
+   <units name="per_concentration_units">
+      <unit units="concentration_units" exponent="-1"/>
+   </units>
+   <units name="coulomb_per_mole">
+      <unit units="coulomb"/>
+      <unit units="mole" exponent="-1"/>
+   </units>
+   <units name="per_mm">
+      <unit units="metre" prefix="-3" exponent="-1"/>
+   </units>
+
+</model>

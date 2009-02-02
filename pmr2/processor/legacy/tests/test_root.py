@@ -27,6 +27,13 @@ class RootTestCase(unittest.TestCase):
         # just a simple test is good enough for now.
         self.assert_('<h4>Model Structure</h4>' in result)
 
+    def test_tmpdoc_with_terms(self):
+        f = open(join(testroot, 'terms.cellml'))
+        result = tmpdoc.tmpdoc2html(f).getvalue()
+        # just a simple test is good enough for now.
+        self.assert_('${HTML_EXMPL_ALBRECHT_MODEL1}' not in result)
+        self.assert_('/albrecht_colegrove_hongpaisan_pivovarova_andrews_friel_2001_version01">' in result)
+
 
 def test_suite():
     suite = unittest.TestSuite()
