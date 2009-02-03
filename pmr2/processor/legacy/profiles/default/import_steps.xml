@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="pmr2-processor-legacy" version="20080202-01"
+              handler="pmr2.processor.legacy.setuphandlers.install"
+              title="pmr2.processor.legacy PortalTransforms setup"
+              >
+  <dependency step="portal-transforms-various"/>
+    pmr2.processor.legacy PortalTransforms installation step.
+ </import-step>
+</import-steps>

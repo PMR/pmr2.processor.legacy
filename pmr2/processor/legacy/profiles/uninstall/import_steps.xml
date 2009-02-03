@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="pmr2-processor-legacy" version="20080202-01"
+              handler="pmr2.processor.legacy.setuphandlers.uninstall"
+              title="pmr2.processor.legacy PortalTransforms uninstaller"
+              >
+    pmr2.processor.legacy PortalTransforms uninstallation step.
+ </import-step>
+</import-steps>

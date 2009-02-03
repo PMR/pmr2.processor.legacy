@@ -13,6 +13,8 @@ pmr2.processor.legacy.egg-info/requires.txt
 pmr2.processor.legacy.egg-info/top_level.txt
 pmr2/processor/__init__.py
 pmr2/processor/legacy/__init__.py
-pmr2/processor/legacy/tmpdoc.py
+pmr2/processor/legacy/setuphandlers.py
+pmr2/processor/legacy/transforms.py
+pmr2/processor/legacy/utils.py
 pmr2/processor/legacy/tests/__init__.py
 pmr2/processor/legacy/tests/test_root.py

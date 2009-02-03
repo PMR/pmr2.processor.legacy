@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="pmr2.processor.legacy">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="PMR2 Legacy Transforms"
+      directory="profiles/default"
+      description="Extends Physiome Model Repository 2 (PMR2) - This adds in the legacy transforms used in the original PMR."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="PMR2 Legacy Transforms uninstaller"
+      directory="profiles/uninstall"
+      description="Removes the legacy transforms used in the original PMR from Physiome Model Repository 2."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
+</configure>
