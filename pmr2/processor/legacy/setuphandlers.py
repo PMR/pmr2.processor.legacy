@@ -27,14 +27,12 @@ def install(context):
     Step to setup the transforms
     """
     # Only run step if a flag file is present (e.g. not an extension profile)
-    print 'BEFORE INSTALL'
     if context.readDataFile('transform-install.txt') \
             is None:
         return
 
     out = StringIO()
     site = context.getSite()
-    print 'CALLING INSTALL'
 
     print >> out, 'Registering CellML mimetype and legacy PMR transforms'
     registerMimeType(site, out, application_cellml_xml)
@@ -51,7 +49,6 @@ def uninstall(context):
     Step to remove the transforms
     """
     # Only run step if a flag file is present (e.g. not an extension profile)
-    print 'CALLING UNINSTALL'
     if context.readDataFile('transform-uninstall.txt') \
             is None:
         return
@@ -59,7 +56,6 @@ def uninstall(context):
     out = StringIO()
     site = context.getSite()
 
-    print 'CALLING UNINSTALL'
     transforms = (
         'pmr2_processor_legacy_tmpdoc2html',
     )

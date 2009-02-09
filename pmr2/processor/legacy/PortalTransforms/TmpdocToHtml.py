@@ -4,8 +4,9 @@ from pmr2.processor.legacy.transforms import tmpdoc2html
 
 class TmpdocToHtml:
     """\
-    wraps around tmpdoc2html for PortalTransforms.
+    TmpdocToHtml - Processes tmpdoc in CellML into HTML.
     """
+    #wraps around tmpdoc2html for PortalTransforms.
 
     __implements__ = itransform
 
