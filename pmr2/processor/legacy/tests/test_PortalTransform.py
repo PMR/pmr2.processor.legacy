@@ -5,6 +5,7 @@ Test case to be sure that these works as PortalTransforms within Plone.
 from os.path import abspath, dirname, join
 from Products.PortalTransforms.tests.test_transforms import make_tests, \
     TransformTest, load
+from Products.PortalTransforms.libtransforms.utils import MissingBinary
 
 PREFIX = abspath(dirname(__file__))
 
@@ -17,6 +18,8 @@ def output_file_path(file):
 TRANSFORMS_TESTINFO = (
     ('pmr2.processor.legacy.PortalTransforms.TmpdocToHtml', 
     'basic.cellml', 'basic.html', None, 0,),
+    ('pmr2.processor.legacy.PortalTransforms.CellmlToHtmlMathml', 
+    'Bucket.cellml', 'Bucket.html', None, 0,),
 )
 
 

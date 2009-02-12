@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<model xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#" xml:base="file:///C:/Randall/Now/CellML/Bucket.cellml" cmeta:id="Bucket" name="Bucket">
+	<units name="litresPerSecond">
+		<unit units="litre"/>
+		<unit exponent="-1" units="second"/>
+	</units>
+	<units name="perSecond">
+		<unit exponent="-1" units="second"/>
+	</units>
+	<component name="Bucket">
+		<variable name="incomingFlowRate" public_interface="in" units="litresPerSecond"/>
+		<variable name="time" public_interface="in" units="second"/>
+		<variable name="flowFactor" public_interface="in" units="perSecond"/>
+		<variable name="volume" public_interface="out" units="litre"/>
+		<variable name="outwardFlowRate" public_interface="out" units="litresPerSecond"/>
+		<math xmlns="http://www.w3.org/1998/Math/MathML">
+			<apply id="Outward flow rate determination">
+				<eq/>
+				<ci>outwardFlowRate</ci>
+				<apply>
+					<times/>
+					<ci>flowFactor</ci>
+					<ci>volume</ci>
+				</apply>
+			</apply>
+			<apply id="Main differential equation"><eq/><apply><diff/><bvar><ci>time</ci></bvar><ci>volume</ci></apply><ci>volumeChangeRate</ci></apply>
+		<apply id="Volume change rate definition"><eq/><ci>volumeChangeRate</ci><apply><minus/><ci>incomingFlowRate</ci><ci>outwardFlowRate</ci></apply></apply></math>
+	<variable name="volumeChangeRate" public_interface="out" units="litresPerSecond"/></component>
+</model>

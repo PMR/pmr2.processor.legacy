@@ -27,3 +27,26 @@ def tmpdoc2html(input):
         raise
 
     return result
+
+def cellml2html_mathml(input):
+    """\
+    Given input CellML file object or string, apply xslt to extract
+    the MathML and placed in an HTML file.
+
+    input - should be a string.
+    """
+
+    if hasattr(input, 'read') and hasattr(input, 'seek'):
+        # assume read is file-like, otherwise treat it as string
+        input.seek(0)
+        input = input.read()
+
+    xslt_file = 'model_math-2-xhtml.xsl'
+    input = StringIO(input)
+    try:
+        result = apply_xslt(input, xslt_file)
+    except:
+        # XXX figure out if we want to trap this here or earlier
+        raise
+
+    return result

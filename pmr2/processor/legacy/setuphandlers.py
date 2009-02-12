@@ -10,6 +10,7 @@ from Products.CMFCore.utils import getToolByName
 from types import InstanceType
 
 from pmr2.processor.legacy.PortalTransforms import TmpdocToHtml
+from pmr2.processor.legacy.PortalTransforms import CellmlToHtmlMathml
 from pmr2.processor.legacy.PortalTransforms.mimetype import \
     application_cellml_xml
 
@@ -40,6 +41,8 @@ def install(context):
     engine = getToolByName(site, 'portal_transforms')
     engine.registerTransform(TmpdocToHtml.register())
     print >> out, 'CellML tmpdoc to HTML transform registered.'
+    engine.registerTransform(CellmlToHtmlMathml.register())
+    print >> out, 'CellML MathML to HTML+MathML transform registered.'
 
     return out.getvalue()
 
@@ -58,6 +61,7 @@ def uninstall(context):
 
     transforms = (
         'pmr2_processor_legacy_tmpdoc2html',
+        'pmr2_processor_legacy_cellml2htmlmathml',
     )
 
     engine = getToolByName(site, 'portal_transforms')

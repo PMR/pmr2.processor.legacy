@@ -26,9 +26,6 @@ class RootTestCase(unittest.TestCase):
     def test_tmpdoc2html_basic(self):
         f = open(join(input_dir, 'basic.cellml'))
         result = transforms.tmpdoc2html(f).getvalue()
-        i = open('/dev/shm/fail', 'w')
-        i.write(result)
-        i.close()
         # just a simple test is good enough for now.
         self.assert_('<h4>Model Structure</h4>' in result)
 
@@ -38,6 +35,12 @@ class RootTestCase(unittest.TestCase):
         # just a simple test is good enough for now.
         self.assert_('${HTML_EXMPL_ALBRECHT_MODEL1}' not in result)
         self.assert_('/albrecht_colegrove_hongpaisan_pivovarova_andrews_friel_2001_version01">' in result)
+
+    def test_cellml2html_mathml(self):
+        f = open(join(input_dir, 'Bucket.cellml'))
+        result = transforms.cellml2html_mathml(f).getvalue()
+        # just a simple test is good enough for now.
+        self.assert_('<math' in result)
 
 
 def test_suite():
