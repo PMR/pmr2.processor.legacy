@@ -44,7 +44,7 @@ def cellml2html_mathml(input):
     xslt_file = 'model_math-2-xhtml.xsl'
     input = StringIO(input)
     try:
-        result = apply_xslt(input, xslt_file)
+        result = apply_xslt(input, xslt_file, xml_declaration=True)
     except:
         # XXX figure out if we want to trap this here or earlier
         raise

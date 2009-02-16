@@ -26,7 +26,8 @@ def xslt_transform(input, xslt):
     result = transform(input_doc)
     return result
 
-def apply_xslt(input, xsltfile, xsltpath=xsltroot):
+def apply_xslt(input, xsltfile, xsltpath=xsltroot, 
+               xml_declaration=False, encoding='utf-8',):
     """\
     Takes in an xsltfile name, and an input.
 
@@ -37,5 +38,6 @@ def apply_xslt(input, xsltfile, xsltpath=xsltroot):
     xslt = open(xslt_fp)
     xslt_result = xslt_transform(input, xslt)
     result = StringIO()
-    xslt_result.write(result)
+    xslt_result.write(result, xml_declaration=xml_declaration,
+                      encoding=encoding)
     return result
