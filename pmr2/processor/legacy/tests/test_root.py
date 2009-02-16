@@ -40,7 +40,6 @@ class RootTestCase(unittest.TestCase):
         f = open(join(input_dir, 'Bucket.cellml'))
         result = transforms.cellml2html_mathml(f).getvalue()
         # just a simple test is good enough for now.
-        open('/dev/shm/fail', 'w').write(result)
         self.assert_('<math' in result)
 
 
