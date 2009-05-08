@@ -16,10 +16,5 @@ pmr2/processor/legacy/__init__.py
 pmr2/processor/legacy/setuphandlers.py
 pmr2/processor/legacy/transforms.py
 pmr2/processor/legacy/utils.py
-pmr2/processor/legacy/PortalTransforms/CellmlToHtmlMathml.py
-pmr2/processor/legacy/PortalTransforms/TmpdocToHtml.py
-pmr2/processor/legacy/PortalTransforms/__init__.py
-pmr2/processor/legacy/PortalTransforms/mimetype.py
 pmr2/processor/legacy/tests/__init__.py
-pmr2/processor/legacy/tests/test_PortalTransform.py
 pmr2/processor/legacy/tests/test_root.py
