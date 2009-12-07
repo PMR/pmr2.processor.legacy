@@ -1,0 +1,10 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+  <utility
+      name="cellml_tmpdoc"
+      component=".factory.CellMLTmpDocViewGenFactory"
+      provides="pmr2.app.interfaces.IDocViewGen"
+      />
+
+</configure>
