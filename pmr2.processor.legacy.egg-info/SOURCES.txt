@@ -14,6 +14,7 @@ pmr2.processor.legacy.egg-info/top_level.txt
 pmr2/processor/__init__.py
 pmr2/processor/legacy/__init__.py
 pmr2/processor/legacy/configure.zcml
+pmr2/processor/legacy/factory.py
 pmr2/processor/legacy/profiles.zcml
 pmr2/processor/legacy/setuphandlers.py
 pmr2/processor/legacy/transforms.py
@@ -28,6 +29,7 @@ pmr2/processor/legacy/profiles/uninstall/import_steps.xml
 pmr2/processor/legacy/profiles/uninstall/transform-uninstall.txt
 pmr2/processor/legacy/tests/__init__.py
 pmr2/processor/legacy/tests/test_PortalTransform.py
+pmr2/processor/legacy/tests/test_digest.py
 pmr2/processor/legacy/tests/test_root.py
 pmr2/processor/legacy/tests/input/Bucket.cellml
 pmr2/processor/legacy/tests/input/basic.cellml
