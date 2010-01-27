@@ -4,8 +4,10 @@ import zope.interface
 
 from pmr2.processor.cmeta import Cmeta
 
-from pmr2.app.interfaces import IDocViewGen, IExposure
-from pmr2.app.factory import named_factory, PortalTransformDocViewGenBase
+from pmr2.app.interfaces import IExposure
+from pmr2.app.annotation.interfaces import IDocViewGen
+from pmr2.app.factory import named_factory
+from pmr2.app.annotation.viewgen import PortalTransformDocViewGenBase
 from pmr2.app.util import simple_valid_date
 
 

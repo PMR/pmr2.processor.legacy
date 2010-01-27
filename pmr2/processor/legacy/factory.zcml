@@ -4,7 +4,7 @@
   <utility
       name="cellml_tmpdoc"
       component=".factory.CellMLTmpDocViewGenFactory"
-      provides="pmr2.app.interfaces.IDocViewGen"
+      provides="pmr2.app.annotation.interfaces.IDocViewGen"
       />
 
 </configure>
