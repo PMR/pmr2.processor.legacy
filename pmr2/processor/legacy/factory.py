@@ -4,7 +4,7 @@ import zope.interface
 
 from pmr2.processor.cmeta import Cmeta
 
-from pmr2.app.content.interfaces import IExposure
+from pmr2.app.content.interfaces import IExposureFile
 from pmr2.app.annotation.interfaces import IDocViewGen
 from pmr2.app.factory import named_factory
 from pmr2.app.annotation.viewgen import PortalTransformDocViewGenBase
@@ -23,30 +23,29 @@ class CellMLTmpDocViewGen(PortalTransformDocViewGenBase):
         self.metadata = Cmeta(StringIO(self.input))
         self.cmetaids = self.metadata.get_cmetaid()
         self.modelinfo = self.metadata.get_dc_vcard_info('')
+        self.modeltitle = self.metadata.get_dc_title('')
         self.citation = None
         if self.cmetaids:
             self.citation = self.metadata.get_citation(self.cmetaids[0])
 
+    # The find${Type}Title methods have fallback onto the other types.
+
     def findModelTitle(self):
-        if self.modelinfo and self.modelinfo[0]['title']:
-            return self.modelinfo[0]['title']
+        if self.modeltitle:
+            return self.modeltitle[0]
         elif self.citation and self.citation[0]['title']:
             return self.citation[0]['title']
-        else:
-            return self.context.Title()
 
-    def generateTitle(self):
-        if not IExposure.providedBy(self.context):
-            # normally we just return the citation title
-            return self.findModelTitle()
+    def findCitationTitle(self):
+        if self.citation and self.citation[0]['title']:
+            return self.citation[0]['title']
+        elif self.modeltitle:
+            return self.modeltitle[0]
 
-        # This overrides default like so because of PMR1.
+    def findCitationAuthors(self):
         if not self.citation:
-            # unchanged
-            # XXX assuming ATCT
-            return self.context.Title()
+            return None
 
-        # however for the root object, we want the list of authors.
         issued = self.citation[0]['issued']
         authors = ', '.join([c['family'] for c in self.citation[0]['creator']])
         if simple_valid_date(issued):
@@ -57,8 +56,25 @@ class CellMLTmpDocViewGen(PortalTransformDocViewGenBase):
             # their own.  Proper citation metadata spec, etc.
             return u'%s, ' % (authors,)
 
+    def generateTitle(self):
+        # the fallbacks assume context is an atct type.
+        if IExposureFile.providedBy(self.context):
+            # since this is an exposure file, we will need to derive the
+            # model/citation file as this should be the actual file that
+            # contain the documentation.
+            return self.findModelTitle() or self.context.Title()
+
+        # otherwise, we just use the list of authors if citation is
+        # found, for there are expectations for the listing to be the
+        # same as how PMR1 did it.
+        return self.findCitationAuthors() or self.context.Title()
+
     def generateDescription(self):
-        title = self.findModelTitle() or self.context.Description()
-        return title
+        # the fallbacks assume context is an atct type.
+        # Since ExposureFiles don't usually show this field, the special
+        # rule here applies to Exposures.  In the name of following the
+        # footsteps of PMR1, the description will be the title of the
+        # citation.
+        return self.findCitationTitle() or self.context.Description()
 
 CellMLTmpDocViewGenFactory = named_factory(CellMLTmpDocViewGen)
