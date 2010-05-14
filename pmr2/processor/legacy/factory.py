@@ -2,13 +2,13 @@ from cStringIO import StringIO
 
 import zope.interface
 
-from pmr2.processor.cmeta import Cmeta
-
 from pmr2.app.content.interfaces import IExposureFile
 from pmr2.app.annotation.interfaces import IDocViewGen
 from pmr2.app.factory import named_factory
 from pmr2.app.annotation.viewgen import PortalTransformDocViewGenBase
 from pmr2.app.util import simple_valid_date
+
+from cellml.pmr2.cmeta import Cmeta
 
 
 class CellMLTmpDocViewGen(PortalTransformDocViewGenBase):
