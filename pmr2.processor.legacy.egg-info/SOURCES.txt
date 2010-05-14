@@ -31,6 +31,7 @@ pmr2/processor/legacy/profiles/uninstall/transform-uninstall.txt
 pmr2/processor/legacy/tests/__init__.py
 pmr2/processor/legacy/tests/test_PortalTransform.py
 pmr2/processor/legacy/tests/test_digest.py
+pmr2/processor/legacy/tests/test_factory.py
 pmr2/processor/legacy/tests/test_root.py
 pmr2/processor/legacy/tests/input/Bucket.cellml
 pmr2/processor/legacy/tests/input/basic.cellml
