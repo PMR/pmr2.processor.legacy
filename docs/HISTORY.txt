@@ -1,8 +1,10 @@
 Changelog
 =========
 
-0.0 - Unreleased
-----------------
+0.3 - Released (2010-06-21)
+---------------------------
 
-* Initial release
+* Uses the CellML PMR2 metadata package as pmr2.processor.cmeta is
+  deprecated.
+* Minor bugfixes
 
