@@ -43,7 +43,7 @@ class CellMLTmpDocViewGen(PortalTransformDocViewGenBase):
             return self.modeltitle[0]
 
     def findCitationAuthors(self):
-        if not self.citation:
+        if not self.citation or not self.citation[0]['creator']:
             return None
 
         issued = self.citation[0]['issued']
