@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: pmr2.processor.legacy
-Version: 0.3rc1
+Version: 0.3
 Summary: UNKNOWN
 Home-page: http://www.cellml.org/
 Author: Tommy Yu
@@ -14,10 +14,12 @@ Description: Introduction
         Changelog
         =========
         
-        0.0 - Unreleased
-        ----------------
+        0.3 - Released (2010-06-21)
+        ---------------------------
         
-        * Initial release
+        * Uses the CellML PMR2 metadata package as pmr2.processor.cmeta is
+        deprecated.
+        * Minor bugfixes
         
         
 Platform: UNKNOWN
