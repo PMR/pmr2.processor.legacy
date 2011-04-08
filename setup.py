@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3'
+version = 'trunk'
 
 setup(name='pmr2.processor.legacy',
       version=version,
