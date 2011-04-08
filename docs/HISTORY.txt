@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.4 - Unreleased
+----------------
+
+* Updated code to match with changes made in pmr2.app v0.4.
+* Removed deprecated code that depended on legacy Zope/Plone.
+
+
 0.3 - Released (2010-06-21)
 ---------------------------
 
