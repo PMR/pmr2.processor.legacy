@@ -1,4 +1,5 @@
-from Products.PortalTransforms.interfaces import itransform
+import zope.interface
+from Products.PortalTransforms.interfaces import ITransform
 
 from pmr2.processor.legacy.transforms import cellml2html_mathml
 
@@ -8,7 +9,7 @@ class CellmlToHtmlMathml:
     """
     #wraps around cellml2html_mathml for PortalTransforms.
 
-    __implements__ = itransform
+    zope.interface.implements(ITransform)
 
     __name__ = "pmr2_processor_legacy_cellml2html_mathml"
     output = "text/html"

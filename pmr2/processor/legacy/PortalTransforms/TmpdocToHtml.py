@@ -1,4 +1,5 @@
-from Products.PortalTransforms.interfaces import itransform
+import zope.interface
+from Products.PortalTransforms.interfaces import ITransform
 
 from pmr2.processor.legacy.transforms import tmpdoc2html
 
@@ -8,7 +9,7 @@ class TmpdocToHtml:
     """
     #wraps around tmpdoc2html for PortalTransforms.
 
-    __implements__ = itransform
+    zope.interface.implements(ITransform)
 
     __name__ = "pmr2_processor_legacy_tmpdoc2html"
     output = "text/html"
