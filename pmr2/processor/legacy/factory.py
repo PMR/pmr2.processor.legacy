@@ -2,7 +2,7 @@ from cStringIO import StringIO
 
 import zope.interface
 
-from pmr2.app.content.interfaces import IExposureFile
+from pmr2.app.exposure.interfaces import IExposureFile
 from pmr2.app.annotation.interfaces import IDocViewGen
 from pmr2.app.factory import named_factory
 from pmr2.app.annotation.viewgen import PortalTransformDocViewGenBase

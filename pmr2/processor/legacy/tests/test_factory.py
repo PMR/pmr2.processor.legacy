@@ -4,7 +4,7 @@ from zope.interface import implements, directlyProvides
 from zope.component import provideAdapter
 
 from pmr2.app.annotation.interfaces import IExposureDocViewGenSourceAdapter
-from pmr2.app.content.interfaces import IExposureFile
+from pmr2.app.exposure.interfaces import IExposureFile
 
 from pmr2.processor.legacy.factory import CellMLTmpDocViewGen
 
