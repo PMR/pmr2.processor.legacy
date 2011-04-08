@@ -1,6 +1,11 @@
+MANIFEST.in
 README.txt
 setup.cfg
 setup.py
+docs/HISTORY.txt
+docs/INSTALL.txt
+docs/LICENSE.GPL
+docs/LICENSE.txt
 pmr2/__init__.py
 pmr2.processor.legacy.egg-info/PKG-INFO
 pmr2.processor.legacy.egg-info/SOURCES.txt
@@ -20,6 +25,7 @@ pmr2/processor/legacy/profiles.zcml
 pmr2/processor/legacy/setuphandlers.py
 pmr2/processor/legacy/transforms.py
 pmr2/processor/legacy/utils.py
+pmr2/processor/legacy/Extensions/Install.py
 pmr2/processor/legacy/PortalTransforms/CellmlToHtmlMathml.py
 pmr2/processor/legacy/PortalTransforms/TmpdocToHtml.py
 pmr2/processor/legacy/PortalTransforms/__init__.py
@@ -37,9 +43,12 @@ pmr2/processor/legacy/tests/input/Bucket.cellml
 pmr2/processor/legacy/tests/input/basic.cellml
 pmr2/processor/legacy/tests/input/terms.cellml
 pmr2/processor/legacy/tests/output/Bucket.html
+pmr2/processor/legacy/tests/output/Bucket.html.orig
 pmr2/processor/legacy/tests/output/basic.html
+pmr2/processor/legacy/xslt/cellml_mathml-to-mathml.xslt
 pmr2/processor/legacy/xslt/cellml_tmpdoc-to-html.xslt
 pmr2/processor/legacy/xslt/ctop.xsl
+pmr2/processor/legacy/xslt/mathml-to-latex.xslt
 pmr2/processor/legacy/xslt/model_math-2-xhtml.xsl
 pmr2/processor/legacy/xslt/pmathml.xsl
 pmr2/processor/legacy/xslt/test.xslt
