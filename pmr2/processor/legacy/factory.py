@@ -1,3 +1,4 @@
+import re
 from cStringIO import StringIO
 
 import zope.interface
@@ -6,9 +7,10 @@ from pmr2.app.exposure.interfaces import IExposureFile
 from pmr2.app.annotation.interfaces import IDocViewGen
 from pmr2.app.factory import named_factory
 from pmr2.app.annotation.viewgen import PortalTransformDocViewGenBase
-from pmr2.app.util import simple_valid_date
 
 from cellml.pmr2.cmeta import Cmeta
+
+re_date = re.compile('^[0-9]{4}(-[0-9]{2}){0,2}')
 
 
 class CellMLTmpDocViewGen(PortalTransformDocViewGenBase):
@@ -48,7 +50,7 @@ class CellMLTmpDocViewGen(PortalTransformDocViewGenBase):
 
         issued = self.citation[0]['issued']
         authors = ', '.join([c['family'] for c in self.citation[0]['creator']])
-        if simple_valid_date(issued):
+        if isinstance(issued, basestring) and re_date.search(issued):
             # Got everything.
             return u'%s, %s' % (authors, issued[:4])
         else:
