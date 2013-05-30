@@ -3,8 +3,7 @@ Test case to be sure that these works as PortalTransforms within Plone.
 """
 
 from os.path import abspath, dirname, join
-from Products.PortalTransforms.tests.test_transforms import make_tests, \
-    TransformTest, load
+from Products.PortalTransforms.tests.test_transforms import TransformTest, load
 from Products.PortalTransforms.libtransforms.utils import MissingBinary
 
 PREFIX = abspath(dirname(__file__))
