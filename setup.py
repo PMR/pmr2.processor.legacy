@@ -25,6 +25,7 @@ setup(name='pmr2.processor.legacy',
       install_requires=[
           'setuptools',
           'lxml>2.0.5',
+          'Products.CMFTestCase',
       ],
       entry_points="""
       # -*- Entry points: -*-
